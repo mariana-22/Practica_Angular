@@ -1,0 +1,35 @@
+<div class="contenido-principal">
+  <div class="columna-izquierda">
+    <div class="header">
+      <h2>{{ seccionActual().titulo }}</h2>
+    </div>
+    
+    <div class="lista-opciones">
+      <div *ngFor="let opcion of seccionActual().listaOpciones" 
+           (click)="seleccionarOpcion(opcion)"
+           [class.opcion-activa]="opcionSeleccionada() === opcion"
+           class="opcion-item">
+        {{ opcion.nombre }}
+      </div>
+    </div>
+  </div>
+
+  <div class="columna-derecha">
+    <div *ngIf="opcionSeleccionada(); else mostrarDefault">
+      <div class="opcion-detalle">
+        <h3>{{ opcionSeleccionada().nombre }}</h3>
+        <p>{{ opcionSeleccionada().descripcion }}</p>
+      </div>
+    </div>
+
+    <ng-template #mostrarDefault>
+      <div class="sena-header">
+        <h1>SENA</h1>
+      </div>
+      
+      <div class="descripcion">
+        <p>{{ seccionActual().descripcion }}</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

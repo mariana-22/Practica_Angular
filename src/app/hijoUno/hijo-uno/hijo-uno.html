@@ -1,0 +1,13 @@
+<div class="barra-lateral">
+  <img src="https://th.bing.com/th/id/OIP.Gv-vDKf_vNNdj8zxW3zY0wHaHQ?w=170&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="logo" class="logo">
+  
+  <div class="menu">
+    <button *ngFor="let opcion of opciones"
+            (click)="seleccionar(opcion.id)"
+            [class.activo]="seleccionado() === opcion.id"
+            class="btn-menu"
+            [title]="opcion.label">
+      <img [src]="opcion.img" [alt]="opcion.label" class="icon-img">
+    </button>
+  </div>
+</div>

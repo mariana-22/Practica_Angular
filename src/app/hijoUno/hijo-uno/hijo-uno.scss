@@ -1,0 +1,55 @@
+.barra-lateral {
+  background-color: #0a0a0a;
+  color: white;
+  padding: 15px 10px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  min-height: 100vh;
+  flex-shrink: 0;
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-menu {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #222;
+    }
+
+    &.activo {
+      background-color: #ff4444;
+      font-weight: bold;
+    }
+
+    .icon-img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
